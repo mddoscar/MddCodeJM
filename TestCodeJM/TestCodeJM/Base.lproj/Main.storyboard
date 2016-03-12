@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="原始" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAH-kl-uSp">
+                                <rect key="frame" x="30" y="30" width="540" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="加密后" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zTb-e4-agn">
+                                <rect key="frame" x="30" y="70" width="540" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUg-Ox-bNL">
+                                <rect key="frame" x="30" y="110" width="540" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk7-V3-eCs">
+                                        <rect key="frame" x="10" y="5" width="82" height="30"/>
+                                        <state key="normal" title="base64加密"/>
+                                        <connections>
+                                            <action selector="dobase64EnCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOI-o6-edz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IM7-DU-pmL">
+                                        <rect key="frame" x="102" y="5" width="82" height="30"/>
+                                        <state key="normal" title="base64解密"/>
+                                        <connections>
+                                            <action selector="dobase64DisCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="arw-Ho-Iad"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.71372549019999998" green="0.84313725490000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="uk7-V3-eCs" firstAttribute="leading" secondItem="uUg-Ox-bNL" secondAttribute="leading" constant="10" id="0qT-ld-yJr"/>
+                                    <constraint firstAttribute="height" constant="40" id="8pF-hZ-LAI"/>
+                                    <constraint firstItem="uk7-V3-eCs" firstAttribute="centerY" secondItem="uUg-Ox-bNL" secondAttribute="centerY" id="KB4-bm-XdR"/>
+                                    <constraint firstItem="IM7-DU-pmL" firstAttribute="leading" secondItem="uk7-V3-eCs" secondAttribute="trailing" constant="10" id="jPy-UH-71J"/>
+                                    <constraint firstItem="IM7-DU-pmL" firstAttribute="centerY" secondItem="uUg-Ox-bNL" secondAttribute="centerY" id="xjy-kC-trE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ho-vK-vWP">
+                                <rect key="frame" x="30" y="160" width="540" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKa-Dg-g7z">
+                                        <rect key="frame" x="10" y="5" width="54" height="30"/>
+                                        <state key="normal" title="aes加密"/>
+                                        <connections>
+                                            <action selector="doAesEnCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V1f-BY-FyI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eug-zu-cMa">
+                                        <rect key="frame" x="74" y="5" width="54" height="30"/>
+                                        <state key="normal" title="aes解密"/>
+                                        <connections>
+                                            <action selector="doAesDeCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sMq-n3-8CK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBd-n1-ZMa">
+                                        <rect key="frame" x="138" y="5" width="61" height="30"/>
+                                        <state key="normal" title="md5加密"/>
+                                        <connections>
+                                            <action selector="doMd5Encode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cIo-qw-aZh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.71372549019999998" green="0.84313725490000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="eug-zu-cMa" firstAttribute="centerY" secondItem="5Ho-vK-vWP" secondAttribute="centerY" id="Nwd-wl-2R1"/>
+                                    <constraint firstItem="BKa-Dg-g7z" firstAttribute="leading" secondItem="5Ho-vK-vWP" secondAttribute="leading" constant="10" id="PTD-2h-Aze"/>
+                                    <constraint firstItem="eug-zu-cMa" firstAttribute="leading" secondItem="BKa-Dg-g7z" secondAttribute="trailing" constant="10" id="dlF-Z9-PPp"/>
+                                    <constraint firstItem="BKa-Dg-g7z" firstAttribute="centerY" secondItem="5Ho-vK-vWP" secondAttribute="centerY" id="exB-zY-WWi"/>
+                                    <constraint firstItem="XBd-n1-ZMa" firstAttribute="leading" secondItem="eug-zu-cMa" secondAttribute="trailing" constant="10" id="k2r-Aw-WM0"/>
+                                    <constraint firstAttribute="height" constant="40" id="lq4-EE-VQ2"/>
+                                    <constraint firstItem="XBd-n1-ZMa" firstAttribute="centerY" secondItem="5Ho-vK-vWP" secondAttribute="centerY" id="qdA-Jf-CDi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qAH-kl-uSp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="JxB-cg-Kav"/>
+                            <constraint firstItem="zTb-e4-agn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="KvL-Jr-rZo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uUg-Ox-bNL" secondAttribute="trailing" constant="10" id="NCi-dx-aAp"/>
+                            <constraint firstItem="qAH-kl-uSp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="YEz-23-wYx"/>
+                            <constraint firstItem="zTb-e4-agn" firstAttribute="top" secondItem="qAH-kl-uSp" secondAttribute="bottom" constant="10" id="YuW-44-6vA"/>
+                            <constraint firstItem="uUg-Ox-bNL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="d44-6l-8z4"/>
+                            <constraint firstItem="5Ho-vK-vWP" firstAttribute="top" secondItem="uUg-Ox-bNL" secondAttribute="bottom" constant="10" id="fIG-JR-RwT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zTb-e4-agn" secondAttribute="trailing" constant="10" id="gfE-bB-atu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Ho-vK-vWP" secondAttribute="trailing" constant="10" id="hCx-3B-Zjg"/>
+                            <constraint firstItem="uUg-Ox-bNL" firstAttribute="top" secondItem="zTb-e4-agn" secondAttribute="bottom" constant="10" id="iI3-FT-d4b"/>
+                            <constraint firstItem="5Ho-vK-vWP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="mxg-80-IaF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qAH-kl-uSp" secondAttribute="trailing" constant="10" id="pOF-BM-PMf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mUiInputTextField" destination="qAH-kl-uSp" id="v20-v2-Hp6"/>
+                        <outlet property="mUiOutPutTextField" destination="zTb-e4-agn" id="78O-Vq-cKl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
